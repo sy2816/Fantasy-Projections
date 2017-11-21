@@ -108,8 +108,9 @@ for(i in c(1:length(players))){
   joinedData$realMinusProj <- joinedData$realPoints - joinedData$projPoints
   
   meanDiff <- mean(joinedData$realMinusProj)
+  medianDiff <- median(joinedData$realMinusProj)
   
-  bindDat <- data.frame(player = players[i], meanDiff = meanDiff)
+  bindDat <- data.frame(player = players[i], meanDiff = meanDiff, medianDiff = medianDiff)
   summaryData <- rbind(summaryData, bindDat)
 }
 summaryData$meanDiff <- round(summaryData$meanDiff, digits = 1)
